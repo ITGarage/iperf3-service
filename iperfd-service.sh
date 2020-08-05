@@ -18,7 +18,7 @@ After=network.target
 [Service]
 Type=simple
 PIDFile=/var/run/iperf3.pid
-ExecStart=/usr/bin/iperf3 -s -D -I /var/run/iperf3.pid
+ExecStart=/usr/bin/iperf3 --server --daemon --stdin /var/run/iperf3.pid
 ExecReload=/usr/bin/kill-HUP $MAINPID
 Restart=always
 [Install]
